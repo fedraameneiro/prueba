@@ -1,4 +1,5 @@
-!pip3 install scikit-learn
+/home/adminuser/venv/bin/python -m pip install --upgrade pip
+pip install scikit-learn
 
 import streamlit as st
 import pandas as pd
