@@ -1,4 +1,4 @@
-/home/adminuser/venv/bin/python -m pip install --upgrade pip
+pip install --upgrade pip
 pip install scikit-learn
 
 import streamlit as st
