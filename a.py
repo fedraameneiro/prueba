@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
-from keras.models import load_model 
+from joblib import load
 
 # Cargar el modelo
-modelo = load_model('modelo.h5')
+modelo = load('modelo.joblib')
 def main():
     st.title("Formulario de Datos del Paciente")
     # Recopilar datos del usuario
