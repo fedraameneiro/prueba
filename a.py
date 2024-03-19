@@ -18,23 +18,22 @@ def main():
     valor_bmi=26
     valorHbA1c=9
     valor_glucosa=160
-    
+
+    #predice la condición del paciente a partir de las cuatro variables medidas
+    paciente= np.array([[valor_edad, valor_bmi, valorHbA1c, valor_glucosa]])
+    nuevos_datos_scaled = scaler.transform(paciente) #es necesario hacerlo
+    prediccion_diabetes_paciente = modelo.predict(nuevos_datos_scaled)
+    print(f'Predicción para paciente : {prediccion_diabetes_paciente}')
+    # Convierte las probabilidades en predicciones binarias usando un umbral (por ejemplo, 0.5)
+    prediccion_binaria = (prediccion_diabetes_paciente >= 0.5).astype(int)
+    print(f'Predicción para paciente : {prediccion_binaria[0]}')
+    # Mapea las predicciones binarias a etiquetas más descriptivas
+    resultado = "Diabetes" if prediccion_binaria[0] == 1 else "No Diabetes"
+    print(f'Predicción para paciente : {resultado}')
     # Crear un array llamado 'paciente' con los datos recopilados
     paciente = [valor_edad, valor_bmi, valorHbA1c, valor_glucosa]
 
-    # Mostrar los datos del paciente en la interfaz de usuario
-    st.write("Datos del Paciente:", paciente)
-    
-    paciente= np.array([[valor_edad, valor_bmi, valorHbA1c, valor_glucosa]])
-    scaler = StandardScaler()
-    paciente = scaler.fit_transform(paciente)
-    nuevos_datos_scaled = scaler.transform(paciente)
-
-    resultado_prediccion = modelo.predict(nuevos_datos_scaled)
-    st.write("resultado_prediccion:", resultado_prediccion)
-    prediccion_binaria=(resultado_prediccion >=0.5).astype(int)
-    st.write("prediccion_binaria:", prediccion_binaria)
-    resultado="Diabetico" if prediccion_binaria[0]==1 else "No Diabetico"
+ 
     st.write("El paciente es:", resultado)
 main()
 
