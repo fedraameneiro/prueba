@@ -15,7 +15,7 @@ def main():
     valorHbA1c =  st.text_input("Valor hbA1c", "9")
     valor_glucosa = st.text_input("Valor glucosa", "160")
     valor_edad =73
-    valor_bmi=25.91
+    valor_bmi=26
     valorHbA1c=9
     valor_glucosa=160
     
