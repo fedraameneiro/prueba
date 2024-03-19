@@ -14,6 +14,10 @@ def main():
     valor_bmi = st.text_input("BMI", "25.91")
     valorHbA1c =  st.text_input("Valor hbA1c", "9")
     valor_glucosa = st.text_input("Valor glucosa", "160")
+    valor_edad =73
+    valor_bmi=25.91
+    valorHbA1c=9
+    valor_glucosa=160
     
     # Crear un array llamado 'paciente' con los datos recopilados
     paciente = [valor_edad, valor_bmi, valorHbA1c, valor_glucosa]
