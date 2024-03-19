@@ -27,8 +27,9 @@ def main():
     nuevos_datos_scaled = scaler.transform(paciente)
 
     resultado_prediccion = modelo.predict(nuevos_datos_scaled)
+    st.write("resultado_prediccion:", resultado_prediccion)
     prediccion_binaria=(resultado_prediccion >=0.5).astype(int)
-    st.write("El paciente es:", prediccion_binaria)
+    st.write("prediccion_binaria:", prediccion_binaria)
     resultado="Diabetico" if prediccion_binaria[0]==1 else "No Diabetico"
     st.write("El paciente es:", resultado)
 main()
